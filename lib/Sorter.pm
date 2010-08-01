@@ -6,7 +6,9 @@ use warnings;
 
 sub new {
     my $class = shift;
-    bless {}, $class;
+    bless {
+        values => [],
+    }, $class;
 }
 
 sub set_values {
@@ -17,7 +19,6 @@ sub set_values {
 
 sub get_values {
     my $self = shift;
-    return if !$self->{values};
     return @{ $self->{values} };
 }
 
